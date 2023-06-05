@@ -22,7 +22,7 @@ def main():
                          outputs=output_text, title="Eduardo's Audio Transcription App",
                          description="Upload an audio file and hit the 'Submit' button")
 
-    iface.launch()
+    iface.launch(debug=True)
 
 
 if __name__ == '__main__':
