@@ -22,7 +22,7 @@ def main():
                          outputs=output_text, title="Eduardo's Audio Transcription App",
                          description="Upload an audio file and hit the 'Submit' button")
 
-    iface.launch(debug=True)
+    iface.launch(debug=True, port=int(os.getenv('PORT', 7860)))  # get the port from environment variable PORT
 
 
 if __name__ == '__main__':
