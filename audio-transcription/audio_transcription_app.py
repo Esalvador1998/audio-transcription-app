@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 import whisper
 import certifi
@@ -16,13 +17,13 @@ def transcribe_audio(audio_file):
 def main():
     audio_input = gr.inputs.Audio(source="upload", type="filepath")
     output_text = gr.outputs.Textbox()
-    
-    iface = gr.Interface(fn=transcribe_audio, inputs=audio_input, 
+
+    iface = gr.Interface(fn=transcribe_audio, inputs=audio_input,
                          outputs=output_text, title="Eduardo's Audio Transcription App",
-                         description="Upload an audio file and hit the 'Submit'\
-                             button")
-    
-    iface.launch()
+                         description="Upload an audio file and hit the 'Submit' button")
+
+    port = int(os.environ.get("PORT", 7860)) 
+    iface.launch(port=port)
 
 
 if __name__ == '__main__':
