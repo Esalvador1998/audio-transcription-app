@@ -22,8 +22,7 @@ def main():
                          outputs=output_text, title="Eduardo's Audio Transcription App",
                          description="Upload an audio file and hit the 'Submit' button")
 
-    port = int(os.environ.get("PORT", 7860)) 
-    iface.launch(port=port)
+    iface.launch()
 
 
 if __name__ == '__main__':
